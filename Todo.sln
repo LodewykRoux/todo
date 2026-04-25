@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.DAL", "Todo.DAL\Todo.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.ManagerLibraryTests", "Todo.ManagerLibraryTests\Todo.ManagerLibraryTests.csproj", "{350FD91F-6DFA-4DD9-A66B-A39C2A349647}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.ApiIntegrationTests", "Todo.ApiIntegrationTests\Todo.ApiIntegrationTests.csproj", "{F5EC5766-7D25-48F1-B986-4999F8F63964}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{350FD91F-6DFA-4DD9-A66B-A39C2A349647}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{350FD91F-6DFA-4DD9-A66B-A39C2A349647}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{350FD91F-6DFA-4DD9-A66B-A39C2A349647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5EC5766-7D25-48F1-B986-4999F8F63964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5EC5766-7D25-48F1-B986-4999F8F63964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5EC5766-7D25-48F1-B986-4999F8F63964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5EC5766-7D25-48F1-B986-4999F8F63964}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
