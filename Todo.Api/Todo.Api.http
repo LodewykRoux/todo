@@ -1,0 +1,6 @@
+@Todo.Api_HostAddress = http://localhost:5273
+
+POST {{Todo.Api_HostAddress}}/auth/login
+Accept: application/json
+
+###

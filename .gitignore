@@ -1,0 +1,59 @@
+# Build results
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+[Rr]eleases/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio files and folders
+.vs/
+.vscode/
+.idea/
+.rider/
+*.sln.DotSettings.user
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.DotSettings.user
+
+# Build artifacts
+*.nuget.props
+*.nuget.targets
+
+# NuGet
+.nuget/
+*.nupkg
+*.snupkg
+packages/
+
+# Test Results
+TestResults/
+.coverage
+*.trx
+
+# Rider
+.idea/
+.idea_modules/
+*.sln.iml
+
+# Local environment files
+.env
+.env.local
+
+# Node modules (if using npm for frontend assets)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+*.log
+*.swp
+*.tmp
