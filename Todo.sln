@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.ManagerLibraryTests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.ApiIntegrationTests", "Todo.ApiIntegrationTests\Todo.ApiIntegrationTests.csproj", "{F5EC5766-7D25-48F1-B986-4999F8F63964}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.AI", "Todo.AI\Todo.AI.csproj", "{8999B57F-A77A-4C9B-B37B-EFDC71B0CC34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{F5EC5766-7D25-48F1-B986-4999F8F63964}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5EC5766-7D25-48F1-B986-4999F8F63964}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5EC5766-7D25-48F1-B986-4999F8F63964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8999B57F-A77A-4C9B-B37B-EFDC71B0CC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8999B57F-A77A-4C9B-B37B-EFDC71B0CC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8999B57F-A77A-4C9B-B37B-EFDC71B0CC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8999B57F-A77A-4C9B-B37B-EFDC71B0CC34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

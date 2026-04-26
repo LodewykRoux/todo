@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Todo.AI\Todo.AI.csproj" />
       <ProjectReference Include="..\Todo.DAL\Todo.DAL.csproj" />
     </ItemGroup>
 

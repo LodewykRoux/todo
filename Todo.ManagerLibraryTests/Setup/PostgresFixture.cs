@@ -18,7 +18,7 @@ public class PostgresFixture : IAsyncLifetime
 
     public DataContext GetContext() => _context;
 
-    public async Task InitializeAsync()
+    public async ValueTask InitializeAsync()
     {
         await _container.StartAsync();
 
@@ -38,7 +38,7 @@ public class PostgresFixture : IAsyncLifetime
         await SeedTodoItems.Seed(_context);
     }
 
-    public async Task DisposeAsync()
+    public async ValueTask DisposeAsync()
     {
         await _context.DisposeAsync();
         await _container.StopAsync();

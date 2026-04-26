@@ -13,12 +13,12 @@ public abstract class IntegrationTestBase : IAsyncLifetime
         Client = Factory.CreateClient();
     }
 
-    public async Task InitializeAsync()
+    public async ValueTask InitializeAsync()
     {
         await Factory.InitializeAsync();
     }
 
-    public async Task DisposeAsync()
+    public async ValueTask DisposeAsync()
     {
         Client.Dispose();
         await Factory.DisposeAsync();

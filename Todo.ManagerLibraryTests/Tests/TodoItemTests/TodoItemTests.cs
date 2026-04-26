@@ -20,7 +20,7 @@ public class TodoItemTests : IAsyncLifetime
     private TodoItemManager _todoItemManager;
     private PostgresFixture _fixture;
 
-    public async Task InitializeAsync()
+    public async ValueTask InitializeAsync()
     {
         _fixture = new PostgresFixture();
         await _fixture.InitializeAsync();
@@ -28,7 +28,7 @@ public class TodoItemTests : IAsyncLifetime
         _todoItemManager = new TodoItemManager(_context);
     }
 
-    public async Task DisposeAsync()
+    public async ValueTask DisposeAsync()
     {
         await _fixture.DisposeAsync();
     }

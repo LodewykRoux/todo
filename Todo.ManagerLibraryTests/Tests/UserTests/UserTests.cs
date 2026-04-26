@@ -15,7 +15,7 @@ public class UserTests : IAsyncLifetime
     private DataContext _context;
     private IAuthManager _authManager;
 
-    public async Task InitializeAsync()
+    public async ValueTask InitializeAsync()
     {
         var result = await TestStartup.BuildServiceProviderWithContainerAsync();
         _serviceProvider = result.provider;
@@ -24,7 +24,7 @@ public class UserTests : IAsyncLifetime
         _authManager = _serviceProvider.GetRequiredService<IAuthManager>();
     }
 
-    public async Task DisposeAsync()
+    public async ValueTask DisposeAsync()
     {
         await _context.DisposeAsync();
         await _container.StopAsync();

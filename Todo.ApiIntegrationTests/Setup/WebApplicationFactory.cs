@@ -12,7 +12,7 @@ public class IntegrationTestWebApplicationFactory : WebApplicationFactory<Progra
 {
     private PostgreSqlContainer? _dbContainer;
 
-    public async Task InitializeAsync()
+    public async ValueTask InitializeAsync()
     {
         _dbContainer = new PostgreSqlBuilder("tododb")
             .WithUsername("postgres")
