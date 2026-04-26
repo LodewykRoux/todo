@@ -86,6 +86,7 @@ builder.Services.AddScoped<JwtTokenService>();
 
 builder.Services.AddScoped<ITodoItemManager, TodoItemManager>();
 builder.Services.AddScoped<IAuthManager, AuthManager>();
+builder.Services.AddScoped<IAgentManager, AgentManager>();
 
 #endregion
 
