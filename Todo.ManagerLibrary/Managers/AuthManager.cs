@@ -1,3 +1,5 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Todo.DAL.DTO.Identity;
 using Todo.DAL.Models.Identity;
@@ -33,5 +35,19 @@ public class AuthManager(UserManager<ApplicationUser> userManager) : IAuthManage
     public async Task AddUserToRole(ApplicationUser user, string role)
     {
         await userManager.AddToRoleAsync(user, role);
+    }
+    
+    public async Task<bool> LogoutUser(ApplicationUser user)
+    {
+        try
+        {
+            user.Token = null;
+            var result = await userManager.UpdateAsync(user);
+            return result.Succeeded;
+        }
+        catch
+        {
+            return false;
+        }
     }
 }

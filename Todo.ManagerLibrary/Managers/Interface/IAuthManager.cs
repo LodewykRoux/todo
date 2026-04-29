@@ -10,4 +10,5 @@ public interface IAuthManager
     Task<ApplicationUser?> FindByEmail(string email);
     Task<bool> CheckPassword(ApplicationUser user, string password);
     Task AddUserToRole(ApplicationUser user, string role);
+    Task<bool> LogoutUser(ApplicationUser user);
 }

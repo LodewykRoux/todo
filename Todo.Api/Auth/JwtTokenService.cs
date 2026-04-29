@@ -31,9 +31,23 @@ public class JwtTokenService(
             issuer: configuration["Jwt:Issuer"],
             audience: configuration["Jwt:Audience"],
             claims: claims,
-            expires: DateTime.UtcNow.AddHours(2),
+            expires: DateTime.UtcNow.AddMonths(1),
             signingCredentials: creds);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+
+    public async Task<ApplicationUser?> GetUserFromTokenAsync(string token)
+    {
+        var handler = new JwtSecurityTokenHandler();
+        var jwtToken = handler.ReadJwtToken(token);
+                
+        var userIdClaim = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+                
+        if (userIdClaim == null)
+            return null;
+                
+        var user = await userManager.FindByIdAsync(userIdClaim.Value);
+        return user;
     }
 }

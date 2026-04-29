@@ -42,7 +42,42 @@ public static class AuthEndpoints
                 return Results.Unauthorized();
 
             var token = await tokenService.CreateTokenAsync(user);
-            return Results.Ok(new { accessToken = token });
+            if (token is null)
+                return Results.Unauthorized();
+            
+            user.Token = token;
+            return Results.Ok(user);
         });
+        
+        group.MapPost("/validate", async (
+            string token,
+            JwtTokenService tokenService) =>
+        {
+            var user = await tokenService.GetUserFromTokenAsync(token);
+            if (user is null)
+                return Results.Unauthorized();
+            
+            return Results.Ok();
+        });
+        
+        group.MapPost("/logout", async (
+            HttpContext context,
+            IAuthManager authManager,
+            JwtTokenService tokenService) =>
+        {
+            var token = context.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+            if (string.IsNullOrEmpty(token))
+                return Results.BadRequest("Token is required");
+
+            var user = await tokenService.GetUserFromTokenAsync(token);
+            if (user is null)
+                return Results.Unauthorized();
+
+            var success = await authManager.LogoutUser(user);
+            if (!success)
+                return Results.StatusCode(500);
+
+            return Results.Ok(new { message = "Logged out successfully" });
+        }).RequireAuthorization();
     }
 }
